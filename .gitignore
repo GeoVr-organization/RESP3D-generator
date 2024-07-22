@@ -1,0 +1,13 @@
+__pycache__/
+output/
+.idea/
+.vscode/
+
+# LaTeX auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.log.[0-9]
+*.out
+*.synctex.gz
