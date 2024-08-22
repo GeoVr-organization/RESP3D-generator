@@ -90,7 +90,9 @@ EOF
 # WSL fixes
 if [ $is_wsl -eq 1 ]; then
     chmod -v 0700 /run/user/1000
-    echo 'chmod 0700 /run/user/1000' | tee -a .bashrc
+    echo 'chmod 0700 /run/user/1000' | tee -a "$HOME/.profile"
+    # shellcheck disable=SC2016
+    echo 'export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH' | tee -a "$HOME/.profile"
     sudo mv -v "$HOME/.local/share/applications/resp-app.desktop" /usr/share/applications/
     sudo mv -v "$HOME/.local/share/applications/resp-editor.desktop" /usr/share/applications/
 fi
